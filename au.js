@@ -105,11 +105,11 @@ class Client {
     addEventListener() {
         document.addEventListener('keydown', event => {
             let key = String.fromCharCode(event.keyCode);
-            if (key == 'X') {
+            if (key == 'E') {
                 this.splitBots();
-            } else if (key == 'C') {
+            } else if (key == 'R') {
                 this.ejectBots();
-            } else if (key == 'P') {
+            } else if (key == 'T') {
                 if (this.authorized) return this.send(new Uint8Array([5]));
                 this.collectPellets = !this.collectPellets
                 console.log(`Collect Pellets: ${this.collectPellets}`);
