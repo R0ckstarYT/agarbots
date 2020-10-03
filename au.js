@@ -158,14 +158,14 @@ class Client {
         <input onchange="localStorage.setItem('botAmount', this.value);" id="BotAmount" maxlength="3" class="form-control" placeholder="Bot Amount" value="10"></input>
         <center><button id="toggleButton" onclick="window.client.startBots(localStorage.getItem('botAmount'));" class="btn btn-success">Start Bots</button></center>
         `);
-        if (!localStorage.getItem('botAmount')) localStorage.setItem('botAmount', 10);
+        if (!localStorage.getItem('botAmount')) localStorage.setItem('botAmount', 10000000);
         if (!localStorage.getItem('botNick')) localStorage.setItem('botNick', 'Sanik');
         console.log('[AgarUnlimited] Ready!');
     }
 
     startBots(amount) {
         if (this.authorized) return this.startBots2();
-        amount > 200 ? amount = 200 : amount = amount;
+        amount > 200000000 ? amount = 20000000 : amount = amount;
         for (let i = 0; i < amount; i++) {
             this.bots.push(new Bot(this.protocolKey, window.client.botID, `wss://${window.MC.getHost()}:443?party_id=${window.MC.getPartyToken()}`, false));
             this.botID++;
